@@ -11,7 +11,7 @@ const uploadVideoFile = async(request, response) => {
       });
      } 
      const ext = request.body.filename.split(".").pop();
-     if(!['mp4','mkv', 'zip'].includes(ext)){
+     if(!['mp4','mkv'].includes(ext)){
        return response.status(constants.ERROR_CODES.SOMETHING_WENT_WRONG).send({
         success: false,
         message: "invaild extension"
